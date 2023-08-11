@@ -1,0 +1,32 @@
+{% extends "./base.html" %}
+
+{% load static %}
+{% block style %}
+        <link rel="stylesheet" href="{% static 'common/css/checkbox.css' %}">
+{% endblock %}    
+
+{% block main %}
+    <h1>Welcome to the RoboDoc Project</h1><br>
+	<h4>Please choose symptoms: </h4>
+	<form action="submittedCheckbox" method ="post">
+		{% csrf_token %}
+		{% for i in data %}		<!-- loop for all symptoms, data is submitted by views.py including symptoms and codes from Symptoms.csv-->
+		<br>
+		<div>
+			<input type="checkbox" id="{{i.0}}" name="symptom{{i.0}}"	> <!--generate checkbox -->
+			<label for="symptom{{i.0}}">{{i.1}}</label>		<!--add label to checkbox with symptom-->
+		</div>
+		{% endfor %}
+		<br>
+		<input class="btn" type ="submit">  <!--submit button-->
+		<br>
+		<br>
+		<br>
+	 </form>
+
+{% endblock %}
+
+
+
+
+

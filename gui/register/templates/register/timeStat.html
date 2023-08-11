@@ -1,0 +1,40 @@
+{% extends "common/base.html" %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'register/registration.css' %}">
+{% endblock %}
+
+{% block main %}
+<div><b>Time chart of each SYMPTOM saved until today</b></div>
+{% if not data %}
+<br>
+NOTHING TO SHOW! PLEASE SAVE SYMPTOMS
+{%else%}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script charset="utf-8" type="text/javascript">
+           google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+          var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Day');
+      {% for k in symptoms %}
+      data.addColumn('number', '{{k}}' );
+      {% endfor %}
+      data.addRows({{data|safe}});
+
+        var options = {
+        legend: { position: "right", alignment: "start", maxLines: 1 },
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+<center>
+    <div id="chart_div" style="width: 900px; height: 500px"></div>
+  </center>
+{%endif%}
+{% endblock %}
+
+

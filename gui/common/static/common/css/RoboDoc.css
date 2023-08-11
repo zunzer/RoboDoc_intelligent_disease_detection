@@ -1,0 +1,99 @@
+
+table{                              /*table layout*/
+    text-align: center;             /*center text*/
+    width:80%;                      /*tabel width*/
+    border-collapse: sepaerate;      /*specific borders*/
+    margin: 0 auto;                 /*center table*/
+}
+
+td {                                /*left, right and bottom table cell spacing*/
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom:20px;
+ }
+
+input[type=search] {
+    width:80%;          /*width of input box*/
+}
+input[type=search]:focus {    /*shadow when typing in input box*/
+    box-shadow: var(--PShadow);
+}
+
+.symptominput {
+    padding:15px 5%; 	/*height x width*/
+    border-radius: 15px;
+    border-color: var(--PColor);
+    margin-right: 20px;
+    display: inline;
+}
+
+.addbtn{                /*layout for add button on RoboDoc.html*/
+    width: 100px !important;
+    height: calc(1.5em + .75rem + 2px) !important;
+    background: white;
+    border:5 ;
+    border-color: var(--PColor);
+    cursor:pointer;
+    border-radius: 10px;
+    margin-top:10px;
+}
+
+.suggestionaddbtn{                /*layout for suggestion add button on RoboDoc.html*/
+    width: 100% !important;
+    height: 30px !important;
+    height :5pt;
+    border: 0;
+    cursor:pointer;
+    border-radius: 10px;
+}
+
+.suggestionaddbtn:hover{        /*hover animation of suggestion add button*/
+    box-shadow: none !important ;
+}
+
+/*
+
+.clearbtn {         /*clear button in input field/ REMOVED due to bad scaling
+    margin-left: -5em;
+    padding-right: 4em;
+    background-color: white;
+    height: 0px;
+    width:20px;
+    border : 0px solid transparent;
+    position: auto
+    display: inline-block !important;
+
+}
+
+
+.symptominput:not(:valid) ~ .clearbtn {         /*only show cross on input
+	display: none;
+}
+
+*/
+
+
+.lds-dual-ring {        /* animation for loading ring */
+  display:none;         /* dont show cycle, only on click */
+  width: 0px;
+  height: 20px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 34px;
+  height: 34px;
+  margin-left: 20px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: var(--PColor) transparent var(--PColor) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

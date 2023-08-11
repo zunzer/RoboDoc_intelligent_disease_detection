@@ -1,0 +1,150 @@
+{% extends "./base.html" %}
+
+{% load static %}
+{% block style %}
+        <link rel="stylesheet" href="{% static 'common/css/RoboDoc.css' %}">
+{% endblock %}
+
+{% block main %}
+	<h3><b>Welcome to the RoboDoc Project</b></h3><br>
+	{% for message in messages %}
+		{{message}}
+	{%endfor%}
+
+<!-- Enter Form for Symptoms -->
+<div>
+	<form action="add" method ="post"> <!-- use post method-->
+		{% csrf_token %} 	<!-- necessary for post method-->
+		<input class="symptominput" id="input" name ="selected" required list="id" type="search"  size="100" autofocus="autofocus" autocomplete="off" placeholder="Please enter symptoms and select from dropdown menu">
+  		<datalist id="id">	 <!-- name: name to fetch submitted text; required class: css-layout class; list: connection to datalist options; autofocus: auto set cursor in input box; placeholder: text in box before typing-->
+				{% for i in data.Name %}		<!-- loop for all symptoms, data is submitted by views.py including symptoms and codes from Symptoms.csv-->
+					<option value="{{ i }}">{{ i }}</option>			<!-- add all symptoms as option for input field-->
+				{% endfor %}
+			</datalist>				<!--symptoms: array with selected symptoms; data: array with all symptoms except selected symptoms; selected: current symptom user wants to add or delete-->
+		<input type ="hidden" name ="symptoms" value='{{ symptoms|dumpj }}'>	<!-- had to use hidden input to submit array back to views.py, convert array to string to submit correct -->
+		<input  id="addButton" onclick="add(this)" class="addbtn" value="ADD" type ="submit"><div id="loaderadd" class="lds-dual-ring"></div><br>		<!-- add button -->
+	</form>
+
+	<br>
+	{% if not valid %}<div style="color:red" > PLEASE SELECT VALID SYMPTOM </div>{% else %}<br>{%endif%} <!-- if valid == false, input was wrong -> show error message-->
+	<br>
+</div>
+
+<!-- Show Selected and Suggested Symptoms -->
+<div>
+	<table >		<!-- create table-->
+		<tr>
+   			<th style=" width:50%" ></th>	<!-- no head-->
+	   		 <th style=" width:50%"></th>
+ 		</tr>
+        <tr>
+            <td {% if symptoms.Name %} rowspan="1"{% endif %}><h4><b> Selected symptoms:</b></h4></td>	<!-- first entry -->
+            <td ><h4><b> Suggested symptoms:</b></h4></td>	<!-- right col entry-->
+        </tr>
+        {% if symptoms.Name %}	<!-- if at least one selected symptom-->
+		<tr>
+            <td style="vertical-align: baseline">
+                <table>
+                <tr>
+                    <th style=" width:80%" ></th>	<!-- no head-->
+                    <th style=" width:20%"></th>
+                </tr>
+                {% for i in symptoms.Name %}	<!-- loop through symptoms-->
+                <tr>
+                    <td style="vertical-align: top;text-align: right;">	<!-- if there is at least one selected symptom, align left col right -->
+											{{ i }}
+                    </td>
+                    <td>	<!-- second column: make delete buttons-->
+                        <form action="delete" method="post">{% csrf_token %}
+                            <input type ="hidden" name ="symptoms" value='{{symptoms| dumpj}}'>	<!-- use hidden input to submit selected symptoms array and selected symptom to views.py when delete button pressed -->
+                            <input type ="hidden" name ="selected" value='{{i}}'>
+                            <input class="deletebtn" type="submit" value="x">		<!-- delete button -->
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            </td>
+            <td style="display:block" rowspan="1">	<!-- third coulumn, show suggestions-->
+                {% if suggested %}
+                    <table> <tr>
+                        <th style=" width:80%" ></th>	<!-- no head-->
+                        <th style=" width:20%"></th>
+                    </tr>
+			 		{%for i in suggested %}
+                    <tr style="padding-top:40px;">
+                        <td style="text-align: right;">{{ i }}</td>
+                        <td>
+                            <form action="add" method="post">
+                            {% csrf_token %}
+							<input id="suggestionaddid" onclick="add(this)" class="suggestionaddbtn" type="submit" value="+">
+							<input type ="hidden" name ="symptoms" value='{{ symptoms|dumpj }}'>
+							<input type="hidden" name="selected" value="{{ i }}">
+							</form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </table>
+                {% endif %}
+            </td>
+		 {% else %}	<!-- no symptoms selected-->
+		     <tr>
+		 		<td>Please enter symptoms.</td><!-- show message in table -->
+				<td>Please enter symptoms.</td>
+		 	</tr>
+		 {%endif%}
+	</table>
+</div>
+<!-- javascript to change button value when clicked and show loading-ring-->
+<script type="text/javascript">
+function add(obj)
+{
+if ((input.value.length != 0) || (obj.id == "suggestionaddid" ))
+{
+document.getElementById("addButton").value="ADDING...";
+document.getElementById("loaderadd").style="display:inline-block !important;";
+}}
+</script>
+<br>
+<br>
+<br>
+<div>
+	{% if user.is_authenticated %} <!--if looged in-->
+	{% if symptoms.Name %}
+		<div>You can save the your results after submitting!</div>
+		<div>It can take up to 30 seconds to calculate results.</div>
+	{%else%}
+	    <div>You need to select Symptoms before you can submit and save them!</div>
+	{%endif%}
+	{%else%}
+		<div>If you want to save your results, please login <a href="/login">here</a>.</div>
+		{% if symptoms.Name %}
+		<div>It can take up to 15 seconds to calculate results.</div>
+		{% endif %}
+	{%endif%}
+</div>
+<br>
+<!-- Button to submit Symptoms -->
+<div>
+	{% if symptoms.Name %}	<!-- if symptoms selected-->
+		<form action="results" method="post">		<!-- show main submit button -->
+			{% csrf_token %}
+			<input type="hidden" name="symptoms" value='{{ symptoms|dumpj }}'>  <!--submit all selected symptoms-->
+			<input id="myButton1" onclick="change()" formaction="results" class="submitbtnmain" type ="submit" value="Submit symptoms"> <div id="loader" class="lds-dual-ring"></div><br>
+		</form>
+	{% endif %}
+</div>
+
+<!-- added javascript to change button value when clicked and show loading-ring-->
+<script type="text/javascript">
+function change()
+{
+document.getElementById("myButton1").value="CALCULATING...";
+document.getElementById("loader").style="display:inline-block !important;";
+}
+
+</script>
+
+{% endblock %}
+ 
+{% block footer %}{% endblock %}	<!--added to remove footer from homepage-->

@@ -1,0 +1,13 @@
+{% extends "common/base.html" %}
+{% load static %}
+
+{%block style%}
+<meta http-equiv="refresh" content="2; URL=/">          <!--page to delete user, redirected to homepage after 2 seconds-->
+{%endblock%}
+
+{% block main %}
+
+<b>{{msg|safe}}</b><br><br>          <!--print message from register/views.py, safe to print included html tags-->
+redirecting...
+
+{%endblock%}

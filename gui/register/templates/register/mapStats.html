@@ -1,0 +1,44 @@
+{% extends "common/base.html" %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'register/registration.css' %}">
+{% endblock %}
+
+{% block main %}
+<div><b>Most common symptoms per country in the last 14 days</b></div>
+<br>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+     function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Occurrence', {type:'string', role:'tooltip', 'p': {'html': true}}],
+          //['US', 200,"Symptom: <b>Fever</b><br>Number: <b>10</b>"],
+           {% for i in country%}
+           {{i|safe}},
+           {%endfor%}
+        ]);
+
+  var options = {
+          title: 'Common symptoms per country',
+          colorAxis: {colors: ['#a9ebf5', '#2020b3']},
+              tooltip: { isHtml: true },
+      };
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+<center>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+</center>
+{% endblock %}
+
+

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    {% load static %}
+    <!-- Include Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet">
+    <!-- Include base CSS to add own layout-->
+    <link href="{% static 'common/css/base.css' %}" rel="stylesheet">
+
+    {% block style %}
+    <!-- block replaced by page specific css file-->
+    {% endblock %}
+
+    <!-- include to collapse navbar and make dropdown availiable-->
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--  Title of Page  -->
+    <title>{% block title %}RoboDoc{% endblock %}</title>
+    <link href="{% static 'common/ico3.png' %}" rel="shortcut icon" type="image/x-icon"> <!-- add icon -->
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+ <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/"><b>RoboDoc</b></a>    <!--added "/" to href to link to homepage-->
+    <button aria-controls="navbarsLeft" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarsLeft, #navbarsRight" data-toggle="collapse" type="button"> <!--navbars left and right-->
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsLeft"> <!--left navbar-->
+      <ul class="navbar-nav mr-auto"> <!--right margin auto-->
+        <li class="nav-item active">  <!--change to class="nav-item active" and delete disabled in class="nav-link disabled" to make link availiable-->
+          <a class="nav-link" href="/wiki">Wiki</a>  <!--link to wiki page, start with /<page> -->
+        </li>
+          <li class="nav-item dropdown active">
+            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown02">Charts</a>
+            <div aria-labelledby="dropdown02" class="dropdown-menu">
+              <a class="dropdown-item" href="/diseasesStat">Diseases</a>
+              <a class="dropdown-item" href="/symptomsStat">Symptoms</a>
+              <a class="dropdown-item" href="/ageStats">Age Chart</a>
+              <a class="dropdown-item" style="color:grey; font-size: x-small;">Note: Public Area <br>Anonymized charts<br> are publicly visible</a>
+            </div>
+           </li>
+         <li class="nav-item active">  <!--World map link-->
+          <a class="nav-link" href="/mapStats"><img alt="Map" style="margin-left:5px" height="20" src="{% static 'common/map.png' %}"> World map</a>  <!--link to world map page -->
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-collapse collapse" id="navbarsRight">   <!--right navbar-->
+       <ul class="navbar-nav ml-auto">      <!-- left margin auto-->
+           {% if user.is_authenticated %} <!--if looged in-->
+           <li class="nav-item dropdown active">
+            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown02">{{user.username}} <img alt="Login" height="25" src="{% static 'common/avatar1.svg' %}" width="25"></a>
+            <div aria-labelledby="dropdown02" class="dropdown-menu">
+              <a class="dropdown-item" href="/profile">Profile</a>
+              <a class="dropdown-item" href="/sysStatsprivate">Your Symptoms</a>
+              <a class="dropdown-item" href="/disStatsprivate">Your Diseases</a>
+			  <a class="dropdown-item" href="/timeStats">Time Chart</a>
+              <a class="dropdown-item" href="/logout">Logout</a>           <!--dropdown for logout -->
+              <a class="dropdown-item" style="color:grey; font-size: x-small;">Note: Private Area <br> Charts and personal data <br> are not publicly visible</a>
+            </div>
+           </li>
+           <li class="nav-item dropdown active">
+            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown03"><img alt="settings" height="25" src="{% static 'common/settings.png' %}" width="25"></a>
+            <div aria-labelledby="dropdown03" class="dropdown-menu">     <!--dropdown for settings -->
+                <a class="dropdown-item" href="/change-userinfo/">Change User Info</a>
+                <a class="dropdown-item" href="/change-password/">Change Password</a>
+                <a class="dropdown-item" href="/deleteUser" onclick="return confirm('Do you want to delete this account?')">Delete Account</a>    <!-- confirm user delete-->
+            </div>
+           </li>
+           {% else %}   <!-- not logged in-->
+           <li class="nav-item active my-sm-1 my-2"> <!-- show login button-->
+            <a class="nav-link" href="/login">Login <img alt="Login" height="25" src="{% static 'common/avatar1.svg' %}" width="25"></a>   <!--link to login page -->
+           </li>
+           {%endif%}
+         <li class="nav-item active">   <!--search box-->
+        <form action="/query" class="form-inline my-2 my-lg-0 " method ="get">    <!--added method ="get" and name = q, important: add / in front of page-->
+          <input aria-label="Search" autocomplete="off" class="search-box form-control mr-sm-2" name="q" placeholder="Search" required="required" type="search">   <!--add required" to avoid empty search-->
+          <button class="searchbtn my-3 my-sm-1" type="submit">SEARCH</button>   <!--added class link to ccs -->
+        </form>
+        </li>
+        </ul>
+    </div>
+  </nav>
+
+  <!-- Main part of website -->
+  <main role="main">
+
+    <div class="container">
+      {% block main %}
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Hello, world!</h1>
+          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div>
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+      {% endblock %}
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="container">
+    <!--{% block footer %}<center><p>© RoboDoc 2020</p></center>{% endblock %}-->
+  </footer>
+  <script crossorigin="anonymous" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</body>

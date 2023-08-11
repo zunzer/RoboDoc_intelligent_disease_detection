@@ -1,0 +1,29 @@
+{% extends "common/base.html" %}
+{% load static %}
+
+{% block style %}
+        <link rel="stylesheet" href="{% static 'register/registration.css' %}">
+{% endblock %} 
+
+{% block main %}        <!--website for login-->
+<h4><b>Login:</b></h4>
+<form method="post" class="form-group">
+    {%csrf_token %}
+    <br><br>
+    <input class = "inputfield" type="text" id="id_username" required placeholder="Username" autocomplete="off" name="username"><br>    <!--username input-->
+    {{ form.username.errors }}      <!--print django username errors-->
+    <br><br>
+    <input class = "inputfield" type="password" id="id_password" required placeholder="Password" autocomplete="off" name="password"><br>    <!--password input-->
+    {{ form.password.errors }}<br>
+    {% if form.errors %}    <!--if error occurred, print message-->
+    <p class="error"> Username or password not correct </p>
+    {% endif %}
+    <br><button class="inputbtn" type="submit">Login</button>
+</form>
+<br>
+<a href="/password_reset/">Forgot password</a>
+<br><br><br>
+<h4><b>Registration: </b></h4>
+<br>
+No Account? Make sure to  <a href="/register">register</a> today<br><br><br><br>
+{% endblock %}

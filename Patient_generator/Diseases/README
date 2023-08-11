@@ -1,0 +1,3 @@
+Disease.csv ##		Disease database -> id name <-
+			since we use only the ID in further context this file is generated to help mapping the name to the right ID
+			!! The Ids are not created randomly, since we applied the ID of APIMEDIC

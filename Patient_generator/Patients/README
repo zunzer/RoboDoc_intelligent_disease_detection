@@ -1,0 +1,12 @@
+##patientsPatients.csv		generated Patients
+					
+Label		Symptom_ID_0	Symptom_ID_1 .. Symptom_ID_n-1
+Disease_ID	0 NO / 1 Yes	0 NO / 1 Yes ..	0 NO / 1 Yes	( Patient 1)
+"								( Patient 2)
+..
+"								( Patient m)
+
+n == #Symptoms == length Symptoms.csv
+m == #Patients generated == length patientsPatients.csv
+
+##patientsPatientsMIXED.csv	shuffled version of patientsPatients.csv

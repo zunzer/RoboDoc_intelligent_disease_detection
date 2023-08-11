@@ -1,0 +1,54 @@
+[
+  {
+    "ID": 11,
+    "Name": "Flu"
+  },
+  {
+    "ID": 15,
+    "Name": "Hypersensitivity reaction"
+  },
+  {
+    "ID": 19,
+    "Name": "Smoking"
+  },
+  {
+    "ID": 32,
+    "Name": "Dry eye"
+  },
+  {
+    "ID": 41,
+    "Name": "Inflammation of paranasal sinuses"
+  },
+  {
+    "ID": 80,
+    "Name": "Cold"
+  },
+  {
+    "ID": 140,
+    "Name": "Pink eye"
+  },
+  {
+    "ID": 322,
+    "Name": "Nasal polyp"
+  },
+  {
+    "ID": 367,
+    "Name": "Hay fever"
+  },
+  {
+    "ID": 368,
+    "Name": "Flu-related rhinitis"
+  },
+  {
+    "ID": 431,
+    "Name": "Drug side effect"
+  },
+  {
+    "ID": 468,
+    "Name": "Foreign object in the nose"
+  },
+  {
+    "ID": 581,
+    "Name": "Eye allergy"
+  }
+]

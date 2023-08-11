@@ -1,0 +1,87 @@
+{% extends "common/base.html" %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'register/registration.css' %}">
+{% endblock %}
+
+{% block main %}
+
+{{msg}}<br>
+
+<table style="text-align: center;">        <!-- create table for user info-->
+    <tr style="border-bottom:3px solid black;">
+        <th style="text-align:left !important; width:20%"><h4>Userinformation: </h4></th>
+        <th style=" width:20%"></th>
+    </tr>
+    <tr>
+        <td> Username</td>
+        <td>{{user.username}}</td>
+    </tr>
+    <tr>
+        <td> Email</td>
+        <td>{{user.email}}</td>
+    </tr>
+    <tr>
+        <td> Country</td>
+        <td>{{user.country}}</td>
+    </tr>
+
+    <tr>
+        <td> Age</td>
+        <td>{{user.age}}</td>
+    </tr>
+    <tr style="border-bottom:3px solid black;">
+        <td> Type</td>
+        <td>{{user.usertype}}</td>
+    </tr>
+</table>
+<br>
+<br>
+<br>
+
+<table>        <!-- create table-->
+    <tr>
+        <th style="border-bottom:3px solid black; width:100%"><h4>History</h4></th>    <!-- no head-->
+    </tr>
+    {%if not UserSymptoms %}
+    <tr><td>You can see saved symptoms here!</td></tr>
+    {%else%}
+    <table>
+    <tr>
+        <th style="width:10%; border-bottom:3px solid black;">User</th>
+        <th style="width:20%; border-bottom:3px solid black;">Date</th>
+        <th style="width:20%; border-bottom:3px solid black;">Result</th>
+        <th style="width:50%; border-bottom:3px solid black;">Symptoms</th>
+        <th style="width:10%; border-bottom:3px solid black;"></th>    <!-- delete row-->
+    </tr>
+    {% for i in UserSymptoms %}
+    <tr style="border-bottom:3px solid black;">
+        <td> {{i.username}}
+        </td>
+        <td > {{i.symp_date}}
+        </td>
+        <td ><a href="/wiki_search?selected={{i.diagnosis}}">{{i.diagnosis}}</a>
+        </td>
+        <td>
+           |  {%for k in Symptoms%}
+                {% if k.ownuser == i %}
+                    {{k.Name}}   |
+                    {%endif%}
+            {%endfor%}
+        </td>
+        <td >
+            <form action="/deleteSaved" method="post">
+                {% csrf_token %}
+                <input type ="hidden" name ="selected" value="{{i.id}}">
+                <input class="deletebtn" type="submit" value="x" onclick="return confirm('Do you want to delete this entry')">		<!-- delete button -->
+            </form>
+        </td>
+    </tr>
+    {%endfor%}
+    </table>
+    {%endif%}
+</table>
+<br><br><br>
+
+{% endblock %}

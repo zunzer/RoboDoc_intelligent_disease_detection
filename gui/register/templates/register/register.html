@@ -1,0 +1,153 @@
+{% extends "common/base.html" %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'register/registration.css' %}">
+{% endblock %}
+
+{% block main %}        <!--website to register-->
+
+<h4><b>Registration:</b></h4><br>
+<form action="" method="post">
+    {%csrf_token %}         <!--add radio button-->
+    <h5>User Type:</h5>
+    <fieldset>
+        <input type="radio" id="patient" name="radio" value="patient" {%ifnotequal usertype "doc"%}checked{%endifnotequal%}>
+        <label for="patient"> Patient</label>
+        <input type="radio" id="doc" name="radio" value="doc" {%ifequal usertype "doc" %}checked{%endifequal%}>
+        <label for="doc"> Doc</label><br>
+    </fieldset>
+    <h5>Name:</h5>
+    <input type="text" required name="first_name" autocomplete="off"
+           {%if name %} value={{name}}
+           {%endif%}
+           {%if namemsg%} class="inputfield msg" placeholder="{{namemsg}}" {%else%} class="inputfield" placeholder="Your name(username)"{%endif%}   ><br><br>
+    <h5>Age:</h5>
+    <input class="inputfield" type="number" name="age" autocomplete="off" required {%if age %}value={{age}} {%else%}
+           placeholder="Age" {%endif%}><br><br>
+    <h5>Country</h5>
+    <select class="inputfield" id="country" name="country" required list="id" type="search" autocomplete="off" placeholder="Country">
+        <datalist id="id">
+            <!-- name: name to fetch submitted text; required class: css-layout class; list: connection to datalist options; autofocus: auto set cursor in input box; placeholder: text in box before typing-->
+            {% if country%}
+            <option value={{country}} selected>{{country}}</option>
+            {%endif%}
+            <option value="Argentina">Argentina</option>
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Botswana">Botswana</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Cambodia">Cambodia</option>
+            <option value="Cameroon">Cameroon</option>
+            <option value="Canada">Canada</option>
+            <option value="Chile">Chile</option>
+            <option value="China">China</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Croatia">Croatia</option>
+            <option value="Cuba">Cuba</option>
+            <option value="Cyprus">Cyprus</option>
+            <option value="Czech Republic">Czech Republic</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Dominican Republic">Dominican Republic</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Egypt">Egypt</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Finland">Finland</option>
+            <option value="France">France</option>
+            {% if not country%}
+            <option value="Germany" selected>Germany</option>
+            {%else%}
+            <option value="Germany">Germany</option>
+            {%endif%}
+            <option value="Ghana">Ghana</option>
+            <option value="GB">Great Britain</option>
+            <option value="Greece">Greece</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Guinea">Guinea</option>
+            <option value="Haiti">Haiti</option>
+            <option value="Honduras">Honduras</option>
+            <option value="Hungary">Hungary</option>
+            <option value="Iceland">Iceland</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="India">India</option>
+            <option value="Iran">Iran</option>
+            <option value="Iraq">Iraq</option>
+            <option value="Ireland">Ireland</option>
+            <option value="Israel">Israel</option>
+            <option value="Italy">Italy</option>
+            <option value="Jamaica">Jamaica</option>
+            <option value="Japan">Japan</option>
+            <option value="Kazakhstan">Kazakhstan</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Laos">Laos</option>
+            <option value="Latvia">Latvia</option>
+            <option value="Lebanon">Lebanon</option>
+            <option value="Libya">Libya</option>
+            <option value="Lithuania">Lithuania</option>
+            <option value="Luxembourg">Luxembourg</option>
+            <option value="Madagascar">Madagascar</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Maldives">Maldives</option>
+            <option value="Malta">Malta</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Monaco">Monaco</option>
+            <option value="Morocco">Morocco</option>
+            <option value="Nambia">Nambia</option>
+            <option value="Netherlands">Netherlands (Holland, Europe)</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Niger">Niger</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Norway">Norway</option>
+            <option value="Papua New Guinea">Papua New Guinea</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Peru">Peru</option>
+            <option value="Phillipines">Philippines</option>
+            <option value="Poland">Poland</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Puerto Rico">Puerto Rico</option>
+            <option value="Qatar">Qatar</option>
+            <option value="Russia">Russia</option>
+            <option value="Senegal">Senegal</option>
+            <option value="Slovakia">Slovakia</option>
+            <option value="Slovenia">Slovenia</option>
+            <option value="Somalia">Somalia</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Spain">Spain</option>
+            <option value="Swaziland">Swaziland</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Syria">Syria</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Turkey">Turkey</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="US">United States of America</option>
+            <option value="Uzbekistan">Uzbekistan</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Vietnam">Vietnam</option>
+
+        </datalist>
+        <!--symptoms: array with selected symptoms; data: array with all symptoms except selected symptoms; selected: current symptom user wants to add or delete-->
+    </select>
+    <br>
+    <br>
+    <h5>Your e-mail:</h5>
+    <input type="email" minlength="5" autocomplete="off" required name="email" {%if email%}value={{email}} {%endif%} {%if emailmsg%} class="inputfield msg" placeholder="{{emailmsg}}" {%else%} class="inputfield" placeholder="E-Mail"{%endif%} ><br><br>
+
+    <h5>Password: (min. length 5 characters)</h5>
+    <input class="inputfield" type="password" minlength="5" autocomplete="off" required name="password"
+           placeholder="Password"><br><br>
+
+
+    <button class="inputbtn" type="submit">Register</button>
+</form>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}    <!--added to remove footer from page-->

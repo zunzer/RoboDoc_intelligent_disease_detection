@@ -1,0 +1,251 @@
+{% extends "./base.html" %}
+{%load static%}
+{% block style %}
+        <link rel="stylesheet" href="{% static 'common/css/RoboDoc.css' %}">
+{% endblock %}
+
+{% block main %}
+<!DOCTYPE html>
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}</style>
+
+
+<div class="container">
+  <h4><b>Most probable diseases</b></h4>
+</div>
+<div class="row">
+  <div class="col-sm">
+    <h4 style="font-size: medium">For following symptoms:   </h4>
+  </div>
+</div>
+<div style="font-size: medium" class="row">
+  <div class="col-sm">
+    {% for i in selected%}
+    {% if forloop.last %}
+      {{ i }}
+    {% else %}
+      {{ i }},
+    {% endif %}
+    {%endfor%}
+  </div>
+</div>
+<br>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, '1')" id="default"><b style="font-size: large">{{ issue1.Name }}</b><br><h4  style="font-size: small">{{ issue1.Portion }} out of 10 people with your symptoms had this disease.</h4> </button>
+  <button class="tablinks" onclick="openCity(event, '2')"><b style="font-size: large">{{ issue2.Name }}</b><br><h4  style="font-size: small">{{ issue2.Portion }} out of 10 people with your symptoms had this disease.</h4> </button>
+  <button class="tablinks" onclick="openCity(event, '3')"><b style="font-size: large">{{ issue3.Name }}</b><br><h4  style="font-size: small">{{ issue3.Portion }} out of 10 people with your symptoms had this disease.</h4> </button>
+</div>
+
+<div style="text-align:left" id="1" class="tabcontent">
+  <br>
+  <div class="row">
+    <div class="col-sm">
+     <h4><b style="font-size: large">{{ issue1.Name }}</b></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <h4 style="font-size: medium"><u>Description:</u></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue1.Description }}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <h4 style="font-size: medium"><u>Treatment:</u></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue1.TreatmentDescription }}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <h4 style="font-size: medium"><u>Possible symptoms:</u></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue1.PossibleSymptoms }}
+    </div>
+  </div>
+  <br><center>
+    {% if type != 'doc' %}
+  <form action="/saveSymptoms">     <!--calling saveSymptoms function in views.py-->
+	{% csrf_token %}
+    <input type ="hidden" name ="selectedIssue" value='{{issue1.Name}}'>
+	<input onclick="setCookie('issue1', 30)" style="  height:40px !important;  width: 150px !important;" type="submit" value="SAVE">		<!-- save symptoms button  -->
+</form>
+    {% endif %}
+</center>
+</div>
+
+<div style="text-align:left" id="2" class="tabcontent">
+  <br>
+  <div class="row">
+    <div class="col-sm">
+     <h4><b  style="font-size: large">{{ issue2.Name }}</b></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <h4 style="font-size: medium"><u>Description:</u></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue2.Description }}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <h4 style="font-size: medium"><u>Treatment:</u></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue2.TreatmentDescription }}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <h4 style="font-size: medium"><u>Possible symptoms:</u></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue2.PossibleSymptoms }}
+    </div>
+  </div>
+  <br><center>
+   {% if type != 'doc' %}
+
+    <form action="/saveSymptoms">     <!--calling saveSymptoms function in views.py-->
+	{% csrf_token %}
+	<input onclick="setCookie('issue2', 30)" style="  height:40px !important;  width: 150px !important;" type="submit" value="SAVE">		<!-- save symptoms button  -->
+</form>
+    {% endif %}
+</center>
+</div>
+
+<div style="text-align:left" id="3" class="tabcontent">
+  <br>
+  <div class="row">
+    <div class="col-sm">
+     <h4><b style="font-size: large">{{ issue3.Name }}</b></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <h4 style="font-size: medium"><u>Description:</u></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue3.Description }}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <h4 style="font-size: medium"><u>Treatment:</u></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue3.TreatmentDescription }}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <h4 style="font-size: medium"><u>Possible symptoms:</u></h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue3.PossibleSymptoms }}
+    </div>
+  </div>
+  <br><center>
+    {% if type != 'doc' %}
+  <form action="/saveSymptoms">     <!--calling saveSymptoms function in views.py-->
+	{% csrf_token %}
+	<input onclick="setCookie('issue3', 30)" style="  height:40px !important;  width: 150px !important;" type="submit" value="SAVE">		<!-- save symptoms button  -->
+</form>
+
+    {% endif %}
+  </center>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+  }
+  document.getElementById("default").click();
+  function setCookie(cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = "selectedIssue" + "=" + cvalue + "; " + expires;
+    }
+</script>
+{% endblock %}
+ 
+ {% block footer %}{% endblock %}	<!--added to remove footer from page-->
+

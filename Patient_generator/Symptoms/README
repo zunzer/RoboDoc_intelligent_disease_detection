@@ -1,0 +1,6 @@
+##Symptoms.csv  	generated sympomlist -> id, name <-
+		 	contains only symptoms appearing in generated diseases context.
+
+##Symptoms.json 	original Dataset 
+			Source: APIMEDIC -- original 
+			contains every Symptom apearing in Source context, above mentioned csv uses this file as a data base.

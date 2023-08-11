@@ -1,0 +1,42 @@
+{% extends "common/base.html" %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'register/registration.css' %}">
+{% endblock %}
+
+{% block main %}
+<div><b>Frequency distribution of SYMPTOMS entered by all users </b></div>
+<br>
+{% if not symp %}
+NOTHING TO SHOW! PLEASE SAVE SYMPTOMS
+{%else%}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+             ['Symptom', 'Occurrence'],
+             {% for i in symp %}
+             ['{{i.Name}}', {{i.count}}],
+             {%endfor%}
+        ]);
+
+        var options = {
+           legend:{position:'none'},
+          bars: 'vertical' // Required for Material Bar Charts.
+          };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  <center>
+    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+  </center>
+<br>
+{%endif%}
+{% endblock %}

@@ -1,0 +1,40 @@
+# Information for Django database system:
+# tipp: use private browser mode to create several sessions
+
+
+To GET THE SERVER STARTED:
+
+(~ATTENTION: delete the .db and all the 001initial py file (in common & register:  /migrations directory) if there is one before FIRST TIME running)
+  0) you need to install the django rest_framework with pip install djangorestframework 
+  1) go into gui/
+  2) type python manage.py makemigrations  
+  3) type python manage.py migrate
+  4) type python manage.py loaddata symptomlist.json
+  5) type python manage.py runserver as below
+
+~ To create an admin / superuser (to check 127.0.0.1/admin and see other user information)
+  1) type python manage.py createsuperuser
+  2) enter email, username, password correctly, other information such as age, sex, usertype isnt necessary
+  JUST TYPE 1 (or type random value but not to long pls) !!!
+  3) then you are ready, run the server and go to 127.../admin and login
+  
+  
+  
+START SERVER with: 		python manage.py runserver 
+and call in browser:		http://127.0.0.1:8000/ 
+to see website
+
+
+DATABSE INTERFACE (not public): 
+call in browser:  		http://127.0.0.1:8000/admin
+Enter superuser username and password
+
+
+make server availiable in LOCAL NETWORK: 
+run server with:              python manage.py runserver 0.0.0.0:8000
+confirm firewall window
+get local IP Adress of your server-computer (e.g. ipconfig, ifconfig)
+goto client-browser and enter:      server-ip-adress:8000
+
+  
+

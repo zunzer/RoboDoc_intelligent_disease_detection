@@ -1,0 +1,1 @@
+[{"Issue": {"ID": 32, "Name": "Dry eye", "Accuracy": 90, "Icd": "H19.3", "IcdName": "Keratitis and keratoconjunctivitis in other diseases classified elsewhere", "ProfName": "Keratoconjunctivitis sicca", "Ranking": 1}, "Specialisation": [{"ID": 15, "Name": "General practice", "SpecialistID": 3}, {"ID": 30, "Name": "Ophthalmology", "SpecialistID": 8}]}]

@@ -1,0 +1,79 @@
+:root {
+  --PColor: lightblue;       /*main color variable*/
+  --PShadow:   0px 0px 3px 3px  var(--PColor) ;  /*main shadow properties*/
+}
+body{
+    text-align: center;             /*center text*/
+      padding-top: 130px !important;           /* make place for navbar, no <br> needed anymore*/
+
+}
+
+input[type=submit] {        /*general submit button layout*/
+    background: white;
+    width: 50%;
+    height:55px;
+    border:5 none;
+    border-color: var(--PColor);
+    cursor:pointer;
+    border-radius: 10px; 	    /*round boarders*/
+}
+input[type=submit]:hover {      /*add shadow to button*/
+    box-shadow: var(--PShadow);
+}
+
+.search-box {
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+    border-radius: 15px;
+    border-color: var(--PColor) !important;
+	margin-right: 1em;
+	margin-left: 2em;
+}
+.search-box:focus{
+	box-shadow: var(--PShadow);
+}
+.searchbtn {            /*searchbutton in base.html*/
+    color : "white";
+    height:40px;
+    background: white;
+    border: 5 ;
+    border-color: var(--PColor);
+    cursor:pointer;
+    border-radius: 10px;
+	margin: auto;
+}
+.searchbtn:hover {
+    box-shadow: var(--PShadow);
+}
+
+:focus {
+  outline: none !important;     /*remove dotted line around buttons*/
+}
+/* Tried to fix footer issue */
+ footer{ position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  background-color: white;
+  text-align: center;
+}
+body.home .site-footer {
+    display: none;
+}
+
+.deletebtn{             /*small x to delete a selected symptom or history entry*/
+    background: white;
+    width: 100% !important;      /*override width and height from parent "input[type=submit]"*/
+    height: 30px !important;
+    border:0;
+     /*border:5 ;
+    border-color: var(--PColor); uncomment if you want a border*/
+    cursor:pointer;
+    border-radius: 10px;
+}
+/* uncomment if you want an animation*/
+.deletebtn:hover{
+    box-shadow: none !important ;
+}

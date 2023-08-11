@@ -1,0 +1,1500 @@
+[
+    {
+        "pk": 188,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Abdominal guarding"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Abdominal pain"
+        }
+    },
+    {
+        "pk": 984,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Absence of a pulse"
+        }
+    },
+    {
+        "pk": 974,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Aggressiveness"
+        }
+    },
+    {
+        "pk": 981,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Agitation"
+        }
+    },
+    {
+        "pk": 147,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Ankle swelling"
+        }
+    },
+    {
+        "pk": 238,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Anxiety"
+        }
+    },
+    {
+        "pk": 1009,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Arm pain"
+        }
+    },
+    {
+        "pk": 971,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Arm swelling"
+        }
+    },
+    {
+        "pk": 104,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Back pain"
+        }
+    },
+    {
+        "pk": 180,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Black stools"
+        }
+    },
+    {
+        "pk": 57,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Blackening of vision"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Blackhead"
+        }
+    },
+    {
+        "pk": 176,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Bleeding in the conjunctiva of the eye"
+        }
+    },
+    {
+        "pk": 48,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Bloated feeling in the stomach"
+        }
+    },
+    {
+        "pk": 190,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Blood in stool"
+        }
+    },
+    {
+        "pk": 233,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Bloody cough"
+        }
+    },
+    {
+        "pk": 991,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Blue colored skin"
+        }
+    },
+    {
+        "pk": 240,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Blue spot on skin"
+        }
+    },
+    {
+        "pk": 239,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Bold area among hair on the head"
+        }
+    },
+    {
+        "pk": 156,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Bone fracture"
+        }
+    },
+    {
+        "pk": 250,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Breathing-related pains"
+        }
+    },
+    {
+        "pk": 979,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Brittleness of nails"
+        }
+    },
+    {
+        "pk": 75,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Burning eyes"
+        }
+    },
+    {
+        "pk": 46,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Burning in the throat"
+        }
+    },
+    {
+        "pk": 288,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Burning nose"
+        }
+    },
+    {
+        "pk": 107,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Burning sensation when urinating"
+        }
+    },
+    {
+        "pk": 91,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Changes in the nails"
+        }
+    },
+    {
+        "pk": 170,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Cheek swelling"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Chest pain"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Chest tightness"
+        }
+    },
+    {
+        "pk": 175,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Chills"
+        }
+    },
+    {
+        "pk": 89,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Cold feet"
+        }
+    },
+    {
+        "pk": 978,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Cold hands"
+        }
+    },
+    {
+        "pk": 139,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Cold sweats"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Cough"
+        }
+    },
+    {
+        "pk": 228,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Cough with sputum"
+        }
+    },
+    {
+        "pk": 94,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Cramps"
+        }
+    },
+    {
+        "pk": 49,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Cravings"
+        }
+    },
+    {
+        "pk": 134,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Crusting"
+        }
+    },
+    {
+        "pk": 260,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Curvature of the spine"
+        }
+    },
+    {
+        "pk": 108,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Dark urine"
+        }
+    },
+    {
+        "pk": 163,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Decreased urine stream"
+        }
+    },
+    {
+        "pk": 50,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Diarrhea"
+        }
+    },
+    {
+        "pk": 79,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Difficult defecation"
+        }
+    },
+    {
+        "pk": 126,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Difficulty in finding words"
+        }
+    },
+    {
+        "pk": 98,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Difficulty in speaking"
+        }
+    },
+    {
+        "pk": 93,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Difficulty in swallowing"
+        }
+    },
+    {
+        "pk": 53,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Difficulty to concentrate"
+        }
+    },
+    {
+        "pk": 1005,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Difficulty with gait"
+        }
+    },
+    {
+        "pk": 216,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Discoloration of nails"
+        }
+    },
+    {
+        "pk": 128,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Disorientation regarding time or place"
+        }
+    },
+    {
+        "pk": 989,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Distended abdomen"
+        }
+    },
+    {
+        "pk": 207,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Dizziness"
+        }
+    },
+    {
+        "pk": 71,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Double vision"
+        }
+    },
+    {
+        "pk": 270,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Double vision, acute-onset"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Drowsiness"
+        }
+    },
+    {
+        "pk": 273,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Dry eyes"
+        }
+    },
+    {
+        "pk": 272,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Dry mouth"
+        }
+    },
+    {
+        "pk": 151,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Dry skin"
+        }
+    },
+    {
+        "pk": 87,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Earache"
+        }
+    },
+    {
+        "pk": 92,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Early satiety"
+        }
+    },
+    {
+        "pk": 1011,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Elbow pain"
+        }
+    },
+    {
+        "pk": 287,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Eye pain"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Eye redness"
+        }
+    },
+    {
+        "pk": 208,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Eyelid swelling"
+        }
+    },
+    {
+        "pk": 219,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Face pain"
+        }
+    },
+    {
+        "pk": 246,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Facial paralysis"
+        }
+    },
+    {
+        "pk": 970,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Facial swelling"
+        }
+    },
+    {
+        "pk": 153,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Fast, deepened breathing"
+        }
+    },
+    {
+        "pk": 83,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Fatty defecation"
+        }
+    },
+    {
+        "pk": 982,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Feeling faint"
+        }
+    },
+    {
+        "pk": 1014,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Feeling ill"
+        }
+    },
+    {
+        "pk": 76,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Feeling of foreign body in the eye"
+        }
+    },
+    {
+        "pk": 86,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Feeling of pressure in the ear"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Fever"
+        }
+    },
+    {
+        "pk": 245,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Flaking skin on the head"
+        }
+    },
+    {
+        "pk": 154,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Flatulence"
+        }
+    },
+    {
+        "pk": 255,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Foot pain"
+        }
+    },
+    {
+        "pk": 1002,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Foot swelling"
+        }
+    },
+    {
+        "pk": 125,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Forgetfulness"
+        }
+    },
+    {
+        "pk": 62,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Formation of blisters on a skin area"
+        }
+    },
+    {
+        "pk": 84,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Foul smelling defecation"
+        }
+    },
+    {
+        "pk": 152,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Hair loss"
+        }
+    },
+    {
+        "pk": 976,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Hallucination"
+        }
+    },
+    {
+        "pk": 72,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Halo"
+        }
+    },
+    {
+        "pk": 148,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Hand swelling"
+        }
+    },
+    {
+        "pk": 80,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Hard defecation"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Headache"
+        }
+    },
+    {
+        "pk": 985,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Heart murmur"
+        }
+    },
+    {
+        "pk": 45,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Heartburn"
+        }
+    },
+    {
+        "pk": 122,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Hiccups"
+        }
+    },
+    {
+        "pk": 196,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Hip pain"
+        }
+    },
+    {
+        "pk": 121,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Hoarseness"
+        }
+    },
+    {
+        "pk": 149,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Hot flushes"
+        }
+    },
+    {
+        "pk": 120,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Impaired balance"
+        }
+    },
+    {
+        "pk": 90,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Impaired hearing"
+        }
+    },
+    {
+        "pk": 113,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Impairment of male potency"
+        }
+    },
+    {
+        "pk": 81,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Incomplete defecation"
+        }
+    },
+    {
+        "pk": 131,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Increased appetite"
+        }
+    },
+    {
+        "pk": 204,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Increased salivation"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Increased thirst"
+        }
+    },
+    {
+        "pk": 220,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Increased touch sensitivity"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Increased urine quantity"
+        }
+    },
+    {
+        "pk": 257,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Involuntary movements"
+        }
+    },
+    {
+        "pk": 986,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Irregular heartbeat"
+        }
+    },
+    {
+        "pk": 73,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Itching eyes"
+        }
+    },
+    {
+        "pk": 973,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Itching in the mouth or throat"
+        }
+    },
+    {
+        "pk": 96,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Itching in the nose"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Itching of skin"
+        }
+    },
+    {
+        "pk": 999,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Itching of the anus"
+        }
+    },
+    {
+        "pk": 247,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Itching on head"
+        }
+    },
+    {
+        "pk": 194,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Joint effusion"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Joint pain"
+        }
+    },
+    {
+        "pk": 47,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Joylessness"
+        }
+    },
+    {
+        "pk": 256,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Knee pain"
+        }
+    },
+    {
+        "pk": 146,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Leg cramps"
+        }
+    },
+    {
+        "pk": 1010,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Leg pain"
+        }
+    },
+    {
+        "pk": 231,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Leg swelling"
+        }
+    },
+    {
+        "pk": 82,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Less than 3 defecations per week"
+        }
+    },
+    {
+        "pk": 167,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Limited mobility of the back"
+        }
+    },
+    {
+        "pk": 1000,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Limited mobility of the hip"
+        }
+    },
+    {
+        "pk": 195,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Limited mobility of the leg"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Lip swelling"
+        }
+    },
+    {
+        "pk": 205,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Lockjaw"
+        }
+    },
+    {
+        "pk": 210,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Loss of eye lashes"
+        }
+    },
+    {
+        "pk": 174,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Lower abdominal pain"
+        }
+    },
+    {
+        "pk": 263,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Lower-back pain"
+        }
+    },
+    {
+        "pk": 235,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Memory gap"
+        }
+    },
+    {
+        "pk": 112,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Menstruation disorder"
+        }
+    },
+    {
+        "pk": 123,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Missed period"
+        }
+    },
+    {
+        "pk": 215,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Moist and softened skin"
+        }
+    },
+    {
+        "pk": 85,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Mood swings"
+        }
+    },
+    {
+        "pk": 983,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Morning stiffness"
+        }
+    },
+    {
+        "pk": 135,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Mouth pain"
+        }
+    },
+    {
+        "pk": 97,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Mouth ulcers"
+        }
+    },
+    {
+        "pk": 177,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Muscle pain"
+        }
+    },
+    {
+        "pk": 119,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Muscle stiffness"
+        }
+    },
+    {
+        "pk": 987,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Muscle weakness"
+        }
+    },
+    {
+        "pk": 253,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Muscular weakness in the leg"
+        }
+    },
+    {
+        "pk": 44,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Nausea"
+        }
+    },
+    {
+        "pk": 136,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Neck pain"
+        }
+    },
+    {
+        "pk": 234,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Neck stiffness"
+        }
+    },
+    {
+        "pk": 114,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Nervousness"
+        }
+    },
+    {
+        "pk": 133,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Night cough"
+        }
+    },
+    {
+        "pk": 1004,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Night sweats"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Nosebleed"
+        }
+    },
+    {
+        "pk": 221,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Numbness in the arm"
+        }
+    },
+    {
+        "pk": 254,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Numbness in the leg"
+        }
+    },
+    {
+        "pk": 137,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Oversensitivity to light"
+        }
+    },
+    {
+        "pk": 157,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Overweight"
+        }
+    },
+    {
+        "pk": 155,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Pain in the bones"
+        }
+    },
+    {
+        "pk": 142,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Pain in the calves"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Pain in the limbs"
+        }
+    },
+    {
+        "pk": 990,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Pain of the anus"
+        }
+    },
+    {
+        "pk": 203,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Pain on swallowing"
+        }
+    },
+    {
+        "pk": 251,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Pain radiating to the arm"
+        }
+    },
+    {
+        "pk": 103,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Pain radiating to the leg"
+        }
+    },
+    {
+        "pk": 286,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Pain when chewing"
+        }
+    },
+    {
+        "pk": 189,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Painful defecation"
+        }
+    },
+    {
+        "pk": 109,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Painful urination"
+        }
+    },
+    {
+        "pk": 150,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Pallor"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Palpitations"
+        }
+    },
+    {
+        "pk": 140,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Paralysis"
+        }
+    },
+    {
+        "pk": 118,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Physical inactivity"
+        }
+    },
+    {
+        "pk": 129,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Problems with the sense of touch in the face"
+        }
+    },
+    {
+        "pk": 258,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Protrusion of the eyes"
+        }
+    },
+    {
+        "pk": 191,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Rebound tenderness"
+        }
+    },
+    {
+        "pk": 54,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Reduced appetite"
+        }
+    },
+    {
+        "pk": 78,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Ringing in the ear"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Runny nose"
+        }
+    },
+    {
+        "pk": 975,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Sadness"
+        }
+    },
+    {
+        "pk": 1001,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Scar"
+        }
+    },
+    {
+        "pk": 60,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Sensitivity to cold"
+        }
+    },
+    {
+        "pk": 102,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Sensitivity to noise"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Shortness of breath"
+        }
+    },
+    {
+        "pk": 183,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Side pain"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Skin lesion"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Skin nodules"
+        }
+    },
+    {
+        "pk": 124,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Skin rash"
+        }
+    },
+    {
+        "pk": 61,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Skin redness"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Skin wheal"
+        }
+    },
+    {
+        "pk": 241,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Sleepiness with spontaneous falling asleep"
+        }
+    },
+    {
+        "pk": 52,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Sleeplessness"
+        }
+    },
+    {
+        "pk": 95,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Sneezing"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Sore throat"
+        }
+    },
+    {
+        "pk": 64,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Sputum"
+        }
+    },
+    {
+        "pk": 179,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Stomach burning"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Stuffy nose"
+        }
+    },
+    {
+        "pk": 138,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Sweating"
+        }
+    },
+    {
+        "pk": 248,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Swollen glands in the armpit"
+        }
+    },
+    {
+        "pk": 249,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Swollen glands in the groin"
+        }
+    },
+    {
+        "pk": 169,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Swollen glands in the neck"
+        }
+    },
+    {
+        "pk": 211,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Tears"
+        }
+    },
+    {
+        "pk": 222,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Testicular pain"
+        }
+    },
+    {
+        "pk": 201,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Tingling"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Tiredness"
+        }
+    },
+    {
+        "pk": 1003,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Toe swelling"
+        }
+    },
+    {
+        "pk": 980,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Tongue burning"
+        }
+    },
+    {
+        "pk": 977,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Tongue swelling"
+        }
+    },
+    {
+        "pk": 1008,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Toothache"
+        }
+    },
+    {
+        "pk": 115,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Tremor at rest"
+        }
+    },
+    {
+        "pk": 988,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Trouble understanding speech"
+        }
+    },
+    {
+        "pk": 144,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Unconsciousness, short"
+        }
+    },
+    {
+        "pk": 116,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Underweight"
+        }
+    },
+    {
+        "pk": 161,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Urination during the night"
+        }
+    },
+    {
+        "pk": 66,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Visual field loss"
+        }
+    },
+    {
+        "pk": 101,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Vomiting"
+        }
+    },
+    {
+        "pk": 181,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Vomiting blood"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Weight gain"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Weight loss"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Wheezing"
+        }
+    },
+    {
+        "pk": 105,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Yellow colored skin"
+        }
+    },
+    {
+        "pk": 106,
+        "model": "common.symptom_list",
+        "fields": {
+            "Name": "Yellowish discoloration of the white part of the eye"
+        }
+    }
+]

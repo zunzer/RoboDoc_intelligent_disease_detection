@@ -1,0 +1,63 @@
+{% extends "./base.html" %}
+
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'common/css/RoboDoc.css' %}">
+{% endblock %}
+
+{% block main %}
+<h3><b>Welcome to the RoboDoc Wiki</b></h3><br>
+<form action="wiki_search" method="get"> <!-- use post method-->
+     <!-- necessary for post method-->
+    <input id="input" name="selected" required class="symptominput" list="id" type="search"
+           autofocus="autofocus" autocomplete="off" placeholder="Please enter the disease and select from dropdown menu">
+    <datalist id="id">
+        <!-- name: name to fetch submitted text; required class: css-layout class; list: connection to datalist options; autofocus: auto set cursor in input box; placeholder: text in box before typing-->
+        {% for i in issues %}
+        <!-- loop for all diseases, data is submitted by views.py -->
+        <option value="{{i}}">{{i}}</option> <!-- add all symptoms as option for input field-->
+        {% endfor %}
+    </datalist>
+    <input class="addbtn" value="Search" type="submit"> <!-- button -->
+</form>
+<br>
+{% if not valid %}PLEASE SELECT VALID DISEASE{% endif %} <!-- if valid == false, input was wrong -> show error message-->
+<br>
+
+{% if issue and valid %} <!-- show information about selected disease -->
+<div>
+  <h3><b>{{ issue.Name }}</b></h3>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      {{ issue.Description }}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <h4>Possible Symptoms:</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue.PossibleSymptoms }}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <h4>Treatment:</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue.TreatmentDescription }}
+    </div>
+  </div>
+</div>
+
+{% endif %}
+{% endblock %}

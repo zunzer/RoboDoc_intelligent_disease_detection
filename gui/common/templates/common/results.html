@@ -1,0 +1,63 @@
+{% extends "./base.html" %}
+{%load static%}
+{% block style %}
+        <link rel="stylesheet" href="{% static 'common/css/RoboDoc.css' %}">
+{% endblock %}
+
+{% block main %}
+<div>
+  <h3><b>{{ issue.Name }}</b></h3>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h4>Description:</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue.Description }}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <h4>Treatment:</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {{ issue.TreatmentDescription }}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm">
+      <h4>Selected Symptoms:   </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      {% for i in selected%}
+      {% if forloop.last %}
+        {{ i }}
+      {% else %}
+        {{ i }},
+      {% endif %}
+      {%endfor%}
+    </div>
+  </div>
+</div>
+<br>
+<!--------- show symptoms and save button-->
+<form action="/saveSymptoms">     <!--calling saveSymptoms function in views.py-->
+	{% csrf_token %}
+	<input style="  height:40px !important;  width: 150px !important;" type="submit" value="save symptoms">		<!-- save symptoms button  -->
+</form>
+
+
+{% endblock %}
+ 
+ {% block footer %}{% endblock %}	<!--added to remove footer from page-->
+

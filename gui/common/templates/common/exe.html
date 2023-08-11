@@ -1,0 +1,106 @@
+{% extends "./base.html" %}
+
+{% block main %}
+
+{% if valid and disease %}
+<div>
+    <h3><b>{{ issue.Name }}</b></h3>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            {{ issue.Description }}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm">
+            <h4>Possible Symptoms:</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            {{ issue.PossibleSymptoms }}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm">
+            <h4>Treatment:</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            {{ issue.TreatmentDescription }}
+        </div>
+    </div>
+</div>
+<br>
+{% if symptom %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h4>{{ symptom_name }} as a Symptom:</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            {{ symptom_name }} could also be a symptom of the following diseases:
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm">
+            {% for m in matching_diseases %}
+            {{ m }} <br>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    <br>
+</div>
+<div>
+    You can also use our <a href="wiki">Wiki</a> to search for a disease.
+</div>
+<br>
+{% endif %}
+
+
+{% if valid and symptom and not disease %}
+<div>
+    <h3><b>{{ symptom_name }}</b></h3>
+    could be a symptom of the following diseases:
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            {% for m in matching_diseases %}
+            {{ m }} <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<br>
+<div>
+    You can use our <a href="wiki">Wiki</a> to learn more about these diseases.
+</div>
+<br>
+{% endif %}
+
+
+{% if not valid %}
+<div>
+    No results. <br>
+    You can also use our <a href="wiki">Wiki</a> to search for a disease.
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+
+
+
